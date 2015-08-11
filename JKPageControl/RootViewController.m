@@ -16,13 +16,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    pageControl = [[JKPageControl alloc]initWithFrame:CGRectMake(0, 100, 200, 20)];
+    pageControl = [[JKPageControl alloc]initWithFrame:CGRectMake(0, 100, 20, 200)];
     pageControl.numberOfPages  = 10;
     pageControl.currentPage = 0;
-    pageControl.itemWidth = 7;
+    pageControl.itemSize  = CGSizeMake(7, 7);
     pageControl.itemMargin = 5;
     pageControl.selectColor = [UIColor redColor];
     pageControl.normalColor = [UIColor grayColor];
+    pageControl.direction = JKPageControlDirectionVertical;
     [pageControl setClickHandler:^(NSInteger tag) {
         NSLog(@"Click%zd",tag);
     }];
@@ -31,10 +32,11 @@
    
     self.pg.numberOfPages  = 10;
     self.pg.currentPage = 0;
-    self.pg.itemWidth = 7;
+    self.pg.itemSize  = CGSizeMake(7, 7);
     self.pg.itemMargin = 5;
     self.pg.selectColor = [UIColor redColor];
     self.pg.normalColor = [UIColor grayColor];
+    self.pg.direction = JKPageControlDirectionHorizontal;
     [pageControl setClickHandler:^(NSInteger tag) {
         NSLog(@"Click%zd",tag);
     }];

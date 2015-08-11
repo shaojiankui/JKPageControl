@@ -7,10 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+
+typedef enum
+{
+    JKPageControlStyleDefault = 0,
+    JKPageControlStyleStrokedCircle = 1,
+    JKPageControlStyleRectangle = 2,
+    JKPageControlStyleImage = 3,
+    
+} JKPageControlStyle;
+
+
+
 typedef enum{
-    StyleColor,
-    StyleImage
-}PageControlType ;
+    JKPageControlDirectionHorizontal,
+    JKPageControlDirectionVertical
+
+}JKPageControlDirection;
+
 
 typedef void (^TouchedBlock)(NSInteger tag);
 
@@ -30,9 +44,10 @@ typedef void (^TouchedBlock)(NSInteger tag);
 @property (nonatomic) UIImage *selectImage;
 
 
-@property (nonatomic) CGFloat itemWidth;
+@property (nonatomic) CGSize itemSize;
+
 @property (nonatomic) CGFloat itemMargin;
 
-@property (nonatomic) PageControlType type;
-
+@property (nonatomic) JKPageControlStyle style;
+@property (nonatomic)  JKPageControlDirection direction;
 @end
